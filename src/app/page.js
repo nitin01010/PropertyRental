@@ -233,9 +233,22 @@ const Property_DataBase = [
 
 const HeroSection = () => {
   return (
-    <div className=" w-[80%] m-auto flex mt-8  items-center  justify-between">
-      <h1 className=" font-bold capitalize leading-[70px] text-5xl text-white">
-        The most affortable <br />  place to stay  in the <br />  san franciso bay area
+    <div className=" w-[80%] m-auto flex flex-wrap mt-8  items-center  justify-between">
+      <h1 className="
+  font-bold 
+  text-3xl
+  capitalize 
+  sm:text-lg 
+  md:text-xl 
+  lg:text-2xl 
+  xl:text-4xl 
+  2xl:text-5xl 
+  text-white
+">
+        The most affordable <br /><br />
+        place to stay in the <br />
+        <br />
+        San Francisco Bay Area
       </h1>
       <img src={ Location.src } className=" object-cover mr-10  rounded " />
     </div>
@@ -295,9 +308,9 @@ export default function Home() {
       <div className="m-auto bg-white p-2">
         <br />
         <h3 className="capitalize px-10 font-bold text-2xl">Minimum living cost takes care of everything</h3>
-        <div className="bg-white flex w-[80%] m-auto p-1 mt-6">
+        <div className="bg-white flex flex-wrap md:flex-nowrap  w-[80%] m-auto p-1 mt-6">
           <img src={ holtel.src } alt="Hotel" />
-          <div className="grid grid-cols-3 gap-4 text-center p-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 text-center p-3">
             { data.map((item, index) => (
               <div key={ index } className="flex border-b-2 border-indigo-300 flex-col items-center justify-center">
                 <MdHotelClass size={ 24 } color="orange" />
@@ -309,17 +322,17 @@ export default function Home() {
       </div>
 
       <div className="m-auto bg-[#f2f2f2] p-2">
-        <div className="flex justify-between items-center py-10 w-[80%] m-auto">
-          <h3 className="capitalize px-10 font-bold relative text-2xl">List of Properties</h3>
-          <div className="w-[84px] h-1 rounded bg-[#F4511E] absolute left-[204px] mt-9" />
+        <div className="flex justify-between items-center py-10  w-[100%] md:w-[80%] m-auto">
+          <h3 className="capitalize px-10 font-bold relative text-xl md:text-2xl">List of Properties</h3>
+          <div className="w-[84px] h-1 rounded bg-[#F4511E] absolute left-[48px]   md:left-[204px] mt-14" />
           <button className="bg-[#F4511E] w-[200px] h-[65px] rounded mr-2 text-white">View All Property</button>
         </div>
 
-        <div className="bg-white flex rounded-3xl justify-between flex-row gap-10 p-2 w-[76%] m-auto">
+        <div className=" bg-white flex flex-wrap rounded-3xl justify-between flex-row gap-10 p-2 w-[100%] m-auto md:w-[76%] ">
           <input
             type="text"
             placeholder="Locations ...."
-            className="bg-[#f2f2f2]  py-3 outline-none border-none p-3 w-[50%] rounded-3xl px-4"
+            className="bg-[#f2f2f2]  py-3 outline-none border-none p-3 w-[100%] md:w-[50%] rounded-3xl px-4"
             value={ searchLocation }
             onChange={ handleSearchChange }
           />
@@ -337,7 +350,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-2">
           { currentItems.map((item, index) => (
             <div key={ index } className="mt-4 w-[358px] m-auto relative h-[530px] bg-[#FFFFFF] rounded-[26.62px] border border-[#979797]">
               <img src={ Room.src } alt={ item.title } /> {/* Display first image for each item */ }
@@ -365,9 +378,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="p-4 bg-white mt-2">
-        <Footer />
-      </div>
+      <Footer />
     </main>
   );
 }
